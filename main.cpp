@@ -9,8 +9,8 @@ three 'A's, and they'll cost you $1.30. In fact this week's prices are:
 ***********************************
 * Item   Unit Price Special Price *
 -----------------------------------
-* A    *    50    *   3 for 130   *
-* B    *    30    *   2 for 45    *
+* A    *    50    *   3 for 130   * (discount 13.3333%) <- I've calculated that to eventually help me in the process
+* B    *    30    *   2 for 45    * (discount 25%) <- I've calculated that also to eventually help me in the process
 * C    *    20    *               *
 * D    *    10    *               *
 ***********************************
@@ -39,7 +39,7 @@ You can use any framework that you feel comfortable with, or start from scratch 
 Create a simple webpage, that submits a form, the input is being validated, calculation is performed, and a receipt is printed on the screen.
 
 DB schema shall be implemented to store unit price information (including special promotion
-info) and the sales record (a kind of an electronic receipt - which units, how many of them and
+info) and the sales record (a kind of electronic receipt - which units, how many of them and
 for what price were sold at a given time).
 Don’t forget to include a script that creates the database, or alternatively, a database dump. */
 
@@ -50,16 +50,16 @@ int main() {
 
     //Variables declaration
     int number, n; //This variable will be used for the number of purchases of certain product the customer wants to buy
-    int total = 0; //self-explanatory, value needs to be added, otherwise the calculation does not work
+    int total = 0; //self-explanatory, value of 0 needs to be added, otherwise the calculation does not work
     char confirm; //some sort of dialog with the customer (y/n)
     int price[4] = {50, 30, 20, 10}; //array with values of type int for the prices
 
-    //Declaring a lable "retry" so the "goto" statment can be used to return the program at its initial point
+    //Declaring a label "retry" so the "goto" statment can be used to return the program at its initial point
     //The "goto" statement is not really recommended, however, I do find it working for this case
 
     retry:
 
-        //Shopping list for the customer to select hid choice (I was inspired by the table in the requirements above)
+        //Shopping list for the customer to select their choice (I was inspired by the table in the requirements above)
         std::cout << "*===================================================================" << std::endl;
         std::cout << "*                \tList of items to purchase    " << std::endl;
         std::cout << "*===================================================================" << std::endl;
@@ -75,10 +75,14 @@ int main() {
 
         //switch cases for each item in the array
         switch (number) {
-            case 1:
+            case 1: //A
                 std::cout << "Please, select how many of the items you want to purchase: ";
                 std::cin >> n;
-                total += price[0] * n;
+                if(n == 3){
+                    total = 130;
+                }else{
+                    total += price[0] * n;
+                }
                 std::cout << "Is that your final purchase? (y/n)";
                 std::cin >> confirm;
                 if (confirm == 'y') {
@@ -94,10 +98,14 @@ int main() {
                     goto retry;
                 }
 
-            case 2:
+            case 2: //B
                 std::cout << "Please, select how many of the items you want to purchase: ";
                 std::cin >> n;
+                if(n == 2){
+                    total = 45;
+                }else{
                 total += price[0] * n;
+                }
                 std::cout << "Is that your final purchase? (y/n)";
                 std::cin >> confirm;
                 if (confirm == 'y') {
@@ -113,7 +121,7 @@ int main() {
                     goto retry;
                 }
 
-            case 3:
+            case 3: //C
                 std::cout << "Please, select how many of the items you want to purchase: ";
                     std::cin >> n;
                     total += price[0] * n;
@@ -131,7 +139,7 @@ int main() {
                         std::cout << "------------------------------------" << std::endl;
                         goto retry;
                     }
-            case 4:
+            case 4: //D
                 std::cout << "Please, select how many of the items you want to purchase: ";
                         std::cin >> n;
                         total += price[0] * n;
@@ -149,7 +157,9 @@ int main() {
                             std::cout << "------------------------------------" << std::endl;
                             goto retry;
                         }
+            default: std::cout << "Please, pick an item from 1 to 4!";
+
         }
 
-        return 0;
+        goto retry;
 }
