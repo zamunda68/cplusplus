@@ -54,7 +54,7 @@ int main() {
     char confirm; //some sort of dialog with the customer (y/n)
     int price[4] = {50, 30, 20, 10}; //array with values of type int for the prices
 
-    //Declaring a label "retry" so the "goto" statment can be used to return the program at its initial point
+    //Declaring a label "retry" so the "goto" statement can be used to return the program at its initial point
     //The "goto" statement is not really recommended, however, I do find it working for this case
 
     retry:
@@ -70,7 +70,7 @@ int main() {
         std::cout << "*4. D           \t||        10       \t|*" << std::endl;
 
         //IO operations related to the list above
-        std::cout << "Please, select your purchase: ";  //output
+        std::cout << "Please, select your purchase: ";  //Output
         std::cin >> number;                             //Input
 
         //switch cases for each item in the array
