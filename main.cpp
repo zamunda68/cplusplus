@@ -157,7 +157,7 @@ int main() {
                             std::cout << "------------------------------------" << std::endl;
                             goto retry;
                         }
-            default: std::cout << "Please, pick an item from 1 to 4!";
+            default: std::cout << "The use of anything other than 1, 2, 3, and 4 is not a valid selection!";
 
         }
 
