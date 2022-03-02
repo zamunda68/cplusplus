@@ -77,7 +77,7 @@ int main() {
 
         //switch cases for each item in the array
         switch (number) {
-            case 1: //A
+            case 1: //Item A
                 std::cout << "Please, select how many of the items you want to purchase: ";
                 std::cin >> n;
                 if(n == 3){
@@ -100,7 +100,7 @@ int main() {
                     goto retry;
                 }
 
-            case 2: //B
+            case 2: //Item B
                 std::cout << "Please, select how many of the items you want to purchase: ";
                 std::cin >> n;
                 if(n == 2){
@@ -123,7 +123,7 @@ int main() {
                     goto retry;
                 }
 
-            case 3: //C
+            case 3: //Item C
                 std::cout << "Please, select how many of the items you want to purchase: ";
                     std::cin >> n;
                     total += price[0] * n;
@@ -141,7 +141,7 @@ int main() {
                         std::cout << "------------------------------------" << std::endl;
                         goto retry;
                     }
-            case 4: //D
+            case 4: //Item D
                 std::cout << "Please, select how many of the items you want to purchase: ";
                         std::cin >> n;
                         total += price[0] * n;
