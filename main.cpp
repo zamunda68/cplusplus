@@ -106,7 +106,7 @@ int main() {
                 if(n == 2){
                     total = 45;
                 }else{
-                total += price[0] * n;
+                total += price[1] * n;
                 }
                 std::cout << "Is that your final purchase? (y/n)";
                 std::cin >> confirm;
@@ -126,7 +126,7 @@ int main() {
             case 3: //Item C
                 std::cout << "Please, select how many of the items you want to purchase: ";
                     std::cin >> n;
-                    total += price[0] * n;
+                    total += price[2] * n;
                     std::cout << "Is that your final purchase? (y/n)";
                     std::cin >> confirm;
                     if (confirm == 'y') {
@@ -144,7 +144,7 @@ int main() {
             case 4: //Item D
                 std::cout << "Please, select how many of the items you want to purchase: ";
                         std::cin >> n;
-                        total += price[0] * n;
+                        total += price[3] * n;
                         std::cout << "Is that your final purchase? (y/n)";
                         std::cin >> confirm;
                         if (confirm == 'y') {
