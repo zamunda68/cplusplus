@@ -83,7 +83,7 @@ int main() {
                 if(n == 3){
                     total = 130;
                 }else{
-                    total += price[0] * n;
+                    total += price[0] * n; //total = total + price[0] * n
                 }
                 std::cout << "Is that your final purchase? (y/n)";
                 std::cin >> confirm;
@@ -167,4 +167,4 @@ int main() {
 }
 
 
-//SQLite tutorial for 5 minutes: https://www.sqlite.org/quickstart.html
+//SQLite tutorial: https://www.sqlite.org/quickstart.html
