@@ -43,6 +43,8 @@ info) and the sales record (a kind of electronic receipt - which units, how many
 for what price were sold at a given time).
 Don’t forget to include a script that creates the database, or alternatively, a database dump. */
 
+#include <cstdio>
+#include <sqlite3.h> //SQLite header for database connection
 #include <iostream>
 #include <cstdlib> //this header allows calling OS commands (e.g. clear, pause and so on)
 
@@ -163,3 +165,6 @@ int main() {
 
         goto retry;
 }
+
+
+//SQLite tutorial for 5 minutes: https://www.sqlite.org/quickstart.html
