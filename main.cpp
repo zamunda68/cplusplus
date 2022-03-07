@@ -1,4 +1,4 @@
-/*Requirements:
+/*Requirements: //
 Implement a solution for a supermarket checkout that calculates the total price of a number of
 items. In a normal supermarket, things are identified using Stock Keeping Units, or SKUs. In our
 store, we'll use individual letters of the alphabet (A, B, C, and so on). Our goods are priced
@@ -50,11 +50,13 @@ Don’t forget to include a script that creates the database, or alternatively, 
 
 int main() {
 
-    //Variables declaration
+
+    //Primitive variables declaration
     int number, n; //This variable will be used for the number of purchases of certain product the customer wants to buy
     int total = 0; //self-explanatory, value of 0 needs to be added, otherwise the calculation does not work
     char confirm; //some sort of dialog with the customer (y/n)
     int price[4] = {50, 30, 20, 10}; //array with values of type int for the prices
+
 
     //Declaring a label "retry" so the "goto" statement can be used to return the program at its initial point
     //The "goto" statement is not really recommended, however, I do find it working for this case
@@ -164,7 +166,7 @@ int main() {
         }
 
         goto retry;
-}
 
+}
 
 //SQLite tutorial: https://www.sqlite.org/quickstart.html
